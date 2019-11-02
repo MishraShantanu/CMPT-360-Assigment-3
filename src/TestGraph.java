@@ -16,19 +16,90 @@ public class TestGraph {
 //****************
 //START: READ ONLY
 //****************
-		
-	
-	
-    public static String DAGTest(Graph G) {
+public static List<ArrayList<Integer>> listOfLists = new ArrayList<ArrayList<Integer>>();
+public static boolean isCyclicUtil(int i, boolean[] visited,
+							 boolean[] recStack,Graph G)
+{
+
+	// Mark the current node as visited and
+	// part of recursion stack
+	if (recStack[i])
+		return true;
+
+	if (visited[i])
+		return false;
+
+	visited[i] = true;
+
+	recStack[i] = true;
+
+
+	List<Integer> children = listOfLists.get(i);
+	System.out.println(children);
+
+
+	for (Integer c: children)
+		if (isCyclicUtil(c, visited, recStack,G))
+			return true;
+
+	recStack[i] = false;
+
+	return false;
+}
+
+
+
+	// Returns true if the graph contains a
+	// cycle, else false.
+	// This function is a variation of DFS() in
+	// https://www.geeksforgeeks.org/archives/18212
+	public   static boolean isCyclic(Graph G)
+	{
+
+		// Mark all the vertices as not visited and
+		// not part of recursion stack
+		boolean[] visited = new boolean[G.nodes.size()];
+		boolean[] recStack = new boolean[G.nodes.size()];
+
+
+		// Call the recursive helper function to
+		// detect cycle in different DFS trees
+		for (int i = 0; i < G.nodes.size(); i++)
+			if (isCyclicUtil(i, visited, recStack,G))
+				return true;
+
+		return false;
+	}
+
+	public static String DAGTest(Graph G) {
 //****************
 //END: READ ONLY
 //****************
 
 		//WRITE YOUR NSID:SHM572
-		
-		//start: edit and write your code here 
-		
-		
+		//start: edit and write your code here
+
+
+		Node q;
+		for (Enumeration k = G.nodes.keys(); k.hasMoreElements();) {
+			ArrayList temp = new ArrayList();
+			q = (Node) k.nextElement();
+			for (Enumeration j = q.outId.keys(); j.hasMoreElements(); ) {
+				//System.out.println("Out List: " + j.nextElement());
+				temp.add(j.nextElement());
+			}
+			if(!temp.isEmpty())
+			listOfLists.add(temp);
+			System.out.println(listOfLists);
+
+
+
+		}
+
+		System.out.println(isCyclic(G));
+
+
+
 		
         //end: write your code here 
 	 
@@ -147,7 +218,7 @@ class Graph{
 				System.out.println("In List: " + j.nextElement()); 
 			}
 			for (Enumeration j = q.outId.keys(); j.hasMoreElements();) {
-				System.out.println("Out List: " + j.nextElement()); 
+				System.out.println("Out List: " + j.nextElement());
 			}			
         } 
 		
