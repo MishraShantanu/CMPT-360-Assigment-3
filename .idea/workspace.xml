@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3f17895b-ccc7-49c2-9536-bd48fa9568f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cmpt360a3/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cmpt360a3/Edge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cmpt360a3/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cmpt360a3/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cmpt360a3/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cmpt360a3/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cmpt360a3/TestGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cmpt360a3/TestGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestGraph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TestGraph.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestGraph.java" afterDir="false" />
     </list>
@@ -24,20 +21,17 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestGraph.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestGraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+            <state relative-caret-position="175">
+              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding>
-                <element signature="e#391#411#0" expanded="true" />
+                <element signature="e#1927#1945#0" expanded="true" />
+                <element signature="e#2005#2023#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,7 +170,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8924000" />
+    <option name="totallyTimeSpent" value="21213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -191,8 +185,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39609236" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.357016" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.21669628" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -247,6 +241,20 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/TestGraph.java</url>
+          <line>12</line>
+          <properties class="TestGraph" method="traverse">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
     <entry file="file://$PROJECT_DIR$/cmpt360a3.iml">
@@ -259,22 +267,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestGraph.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestGraph.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+        <state relative-caret-position="175">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding>
-            <element signature="e#391#411#0" expanded="true" />
+            <element signature="e#1927#1945#0" expanded="true" />
+            <element signature="e#2005#2023#0" expanded="true" />
           </folding>
         </state>
       </provider>

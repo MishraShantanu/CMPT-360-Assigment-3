@@ -10,66 +10,37 @@ public class TestGraph {
 //****************
 //END: READ ONLY
 //****************
- 
+ public static String traverse(Node q,Graph g,Stack stack){
+	 Integer l;
+	 System.out.println("node: "+q.id+"stack"+stack);
+	 for(Enumeration i = q.outId.keys();i.hasMoreElements();){
+		 l = (Integer) i.nextElement();
+         if(!stack.contains(l)){
+
+			 if(g.nodeIDs.get(l).outdegree!=0) {
+				 stack.push(l);
+				 if(traverse(g.nodeIDs.get(l), g,stack)=="Cyclic")
+				 	return "Cyclic";
+
+			 }
+         }else{
+         	System.out.println("CONTAINS "+l);
+         	return "Cyclic";
+		 }
+
+
+	 }
+	 return "ACyclic";
+	 }
+
+
 // YOU CAN DEFINE YOUR OWN FUNCTIONS HERE IF YOU REALLY NEED ONE
 
 //****************
 //START: READ ONLY
 //****************
-public static List<ArrayList<Integer>> listOfLists = new ArrayList<ArrayList<Integer>>();
-public static boolean isCyclicUtil(int i, boolean[] visited,
-							 boolean[] recStack,Graph G)
-{
-
-	// Mark the current node as visited and
-	// part of recursion stack
-	if (recStack[i])
-		return true;
-
-	if (visited[i])
-		return false;
-
-	visited[i] = true;
-
-	recStack[i] = true;
 
 
-	List<Integer> children = listOfLists.get(i);
-	System.out.println(children);
-
-
-	for (Integer c: children)
-		if (isCyclicUtil(c, visited, recStack,G))
-			return true;
-
-	recStack[i] = false;
-
-	return false;
-}
-
-
-
-	// Returns true if the graph contains a
-	// cycle, else false.
-	// This function is a variation of DFS() in
-	// https://www.geeksforgeeks.org/archives/18212
-	public   static boolean isCyclic(Graph G)
-	{
-
-		// Mark all the vertices as not visited and
-		// not part of recursion stack
-		boolean[] visited = new boolean[G.nodes.size()];
-		boolean[] recStack = new boolean[G.nodes.size()];
-
-
-		// Call the recursive helper function to
-		// detect cycle in different DFS trees
-		for (int i = 0; i < G.nodes.size(); i++)
-			if (isCyclicUtil(i, visited, recStack,G))
-				return true;
-
-		return false;
-	}
 
 	public static String DAGTest(Graph G) {
 //****************
@@ -80,23 +51,21 @@ public static boolean isCyclicUtil(int i, boolean[] visited,
 		//start: edit and write your code here
 
 
+
 		Node q;
 		for (Enumeration k = G.nodes.keys(); k.hasMoreElements();) {
-			ArrayList temp = new ArrayList();
 			q = (Node) k.nextElement();
-			for (Enumeration j = q.outId.keys(); j.hasMoreElements(); ) {
-				//System.out.println("Out List: " + j.nextElement());
-				temp.add(j.nextElement());
+			Stack<Integer> stack = new Stack<>();
+
+			if(q.outdegree!=0){
+				stack.push(q.id);
+				if(traverse(q,G,stack)=="Cyclic"){
+					return "Cyclic";
+				}
+
 			}
-			if(!temp.isEmpty())
-			listOfLists.add(temp);
-			System.out.println(listOfLists);
-
-
 
 		}
-
-		System.out.println(isCyclic(G));
 
 
 
@@ -104,7 +73,7 @@ public static boolean isCyclicUtil(int i, boolean[] visited,
         //end: write your code here 
 	 
 		 
-		return "True";
+		return "Acyclic";
     }
 //****************
 //START: READ ONLY
@@ -215,7 +184,7 @@ class Graph{
 			System.out.println("outdegree = " + q.outdegree);
 
 			for (Enumeration j = q.inId.keys(); j.hasMoreElements();) {
-				System.out.println("In List: " + j.nextElement()); 
+				System.out.println("In List: " + j.nextElement());
 			}
 			for (Enumeration j = q.outId.keys(); j.hasMoreElements();) {
 				System.out.println("Out List: " + j.nextElement());
